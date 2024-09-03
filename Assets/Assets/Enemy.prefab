@@ -102,6 +102,7 @@ MonoBehaviour:
   moveSpeed: 0
   maxHealthPoint: 0
   target: {fileID: 0}
+  chaseRange: 0
 --- !u!54 &4104437301222960289
 Rigidbody:
   m_ObjectHideFlags: 0
