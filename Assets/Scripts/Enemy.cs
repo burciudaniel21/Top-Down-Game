@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     private float healthPoint;
     [SerializeField] private float maxHealthPoint;
     [SerializeField] Transform target;
+    [SerializeField] private float chaseRange;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,10 @@ public class Enemy : MonoBehaviour
 
     private void Move()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+        if(Vector3.Distance(transform.position, target.position) < chaseRange)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+
+        }
     }
 }
